@@ -2,7 +2,6 @@ import streamlit as st
 import httpx as httpx
 import os
 from dotenv import load_dotenv
-
 load_dotenv()
 domain = os.environ.get("DOMAIN")
 import streamlit as st
@@ -23,8 +22,6 @@ def fetch_data():
 
 st.write("You selected:", start_datetime, "to", end_datetime)
 if st.button("fetch data"):
-    # Code inside this 'if' block only executes when the button is pressed
     response = fetch_data()
-    # st.write(response)
     data = response.json()
     st.json(data)
